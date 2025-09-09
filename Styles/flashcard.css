@@ -1,0 +1,101 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F6F6F6;
+}
+
+.navbar {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: -15px;
+    animation: fade-up 0.5s;
+}
+
+.navbarright {
+    display: flex;
+    align-items: right;
+    padding: 20px;
+
+}
+
+.btnstyle1 {
+    background-color: #004AAD;
+    color: white;
+    border-radius: 16px;
+    padding: 5px 15px;
+    border: none;
+    margin-left: 32px;
+}
+
+.flashcard-title, .flashcard-info {
+    text-align: center;
+    font-family: "Instrument Sans";
+    animation: fade-up 0.5s;
+}
+
+.flashcard-title {
+    font-size: 72px;
+}
+.flashcard-info {
+    font-size: 144px;
+    margin-top: -60px;
+}
+
+.flashcard-input {
+    border-radius: 20px;
+    border: 1px solid black;
+    width: 90%;
+    padding: 20px 40px 20px 40px;
+}
+
+.flashcard-term, .flashcard-definition {
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+.flashcard-bar1 {
+    display: flex;
+    width: 100%;
+    background-color: #2563eb;
+    padding: 20px 0 20px 0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: fade-up 0.5s;
+}
+
+.flashcard-bar2 {
+    display: flex;
+    width: 100%;
+    background-color: #FFB6EC;
+    padding: 20px 0 20px 0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    animation: fade-up 0.5s;
+}
+
+.button-bar {
+    display: flex;
+    width: 100%;
+    animation: fade-up 0.5s;
+}
+
+.add-btn, .complete-btn {
+    width: 50%;
+    padding: 20px 0 20px 0;
+    border-radius: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

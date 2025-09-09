@@ -41,11 +41,11 @@ body {
     font-family: Instrument Sans;
 }
 
-.btnstyle2:hover {
+.btnstyle2:hover, .btnstyle1:hover {
     opacity: 0.85;
 }
 
-.btnstyle2:active {
+.btnstyle2:active, .btnstyle2:hover {
     background-color: #FF3131;
 }
 

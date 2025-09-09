@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReVill</title>
-    <link rel="stylesheet" href="style.css">
-    <!--Google Font - Inter-->
+    <title>Generate Flashcards!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -14,33 +12,37 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script src="uncle.js"></script>
+    <link rel="stylesheet" href="Styles/flashcard.css">
 </head>
 <body>
-    
     <div class="navbar">
         <image src="Images/logo.png" alt="ReVill Logo" class="logo">
         <div class="navbarright">
-            <p onclick="window.location.href='flashcard.html'">Create Flashcard</p>
+            <p onclick="location.href='index.html'">Home</p>
             <button class="btnstyle1">Start <br> Revilling</button>
         </div>
     </div>
-    <div class="center-logo">
-        <div class="logo-container">
-            <span class="logo-re">Re</span><span class="logo-vill">Vill</span>
-            <span class="logo-beta">Beta</span>
+    <h2 class="flashcard-title">Create your flashcards now</h2>
+    <h1 class="flashcard-info">using <span style="color: #004AAD;">Re</span><span style="color: #FF3131;">Vill</span></h1>
+    <div class="flashcard-bar1">
+        <div class="flashcard-term">
+            <input type="text" placeholder="Enter Term" class="flashcard-input">
+        </div>
+        <div class="flashcard-definition">
+            <input type="text" placeholder="Enter Definition" class="flashcard-input">
         </div>
     </div>
-    <div class="center-description">
-        <p>Re<span style="color: #004AAD">fill</span> your knowledge <br> through <span style="color: #FF0000;">rev</span>ision</p>
+    <div class="flashcard-bar2">
+        <div class="flashcard-term">
+            <input type="text" placeholder="Enter Term" class="flashcard-input">
+        </div>
+        <div class="flashcard-definition">
+            <input type="text" placeholder="Enter Definition" class="flashcard-input">
+        </div>
     </div>
-    <div class="btn-container">
-        <button class="btnstyle2">Start Now!</button>
-    </div>
-    <div class="index-bottom">
-        <!--Hoosun is so bad, he talk lutlutcutcut in live. Even an old uncle is better than him-->
-        <!--Rights to this index.html file belongs to Chan Ching On and Hui Chi Yu-->
-        <!--Hackers are strictly prohibited.-->
-        
+    <div class="button-bar">
+        <button class="add-btn" id="add">Add More</button>
+        <button class="complete-btn" id="complete">Complete Flashcards</button>
     </div>
 </body>
 </html>
