@@ -89,6 +89,26 @@ body {
     margin-left: 20px;
 }
 
+.stupid-button-bar {
+    display: flex;
+    width: 100%;
+    animation: fade-up 0.5s;
+}
+
+.import-btn, .export-btn, .export-btn2, .delete-btn, .uncle-btn {
+    width: 20%;
+    padding: 20px 0 20px 0;
+}
+
+.flashcard-title-input {
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 8px 16px 8px 16px;
+    width: 98%;
+    border: 1px solid grey;
+    margin-bottom: 20px;
+
+}
 @keyframes fade-up {
     from {
         opacity: 0;

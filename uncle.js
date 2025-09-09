@@ -1,5 +1,7 @@
 function uncle() {
-    console.log("Gary is a uncle");
+    while (true) {
+      console.log("Gary is a uncle");
+    }
 }
 
 function isMobileDevice() {

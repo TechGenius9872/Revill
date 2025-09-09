@@ -1,0 +1,57 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F6F6F6;
+}
+.logo-container {
+    background: white;
+    border-radius: 16px;
+    display: inline-block;
+    padding: 8px 32px 8px 24px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    text-align: center;
+    animation: fade-up 0.5s;
+}
+
+.logo-re {
+    color: #FF3B30;
+    font-size: 144px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -4px;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.logo-vill {
+    color: #004AAD;
+    font-size: 144px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -4px;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.logo-beta {
+    color: #FF3B30;
+    font-size: 40px; /* Smaller for balance */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 24px;
+    right: -56px;
+    transform: rotate(20deg);
+    opacity: 0.85;
+    background: transparent;
+    padding: 0 8px;
+    letter-spacing: 2px;
+}
+
+.center-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px; 
+}
