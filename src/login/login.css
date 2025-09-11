@@ -55,3 +55,44 @@ body {
     width: 100%;
     margin-top: 40px; 
 }
+
+.hide {
+    display:none;
+}
+
+.error_div {
+    background-color: rgb(250, 65, 45);
+    display: none;
+    border-radius: 5px;
+    max-width: 365px;
+    margin-bottom: 16px;
+    align-items: center;
+    text-align: center;
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+}
+
+.error_message {
+    background-color: transparent;
+    color: #FFFFFF;
+    font-family: 'Instrument Sans';
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.verify_btn {
+    margin-top: 8px; 
+    width: 150px;
+    border-radius:5px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: #84c7ae;
+    color: black;
+    text-align: center;
+}
+
+* {
+    font-family: "instrument sans";
+}
