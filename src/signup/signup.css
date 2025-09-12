@@ -84,3 +84,47 @@ body {
     align-items: center;
     margin-top: 20px;
 }
+
+.authorization_btn {
+  margin-top: 8px; 
+  width: 70px;
+  border-radius:5px;
+  height: 30px;
+  border: 1px solid black;
+  background-color: #84c7ae;
+  color: black;
+}
+
+.authorization_message {
+  color: black;
+}
+
+.authorization_btn:hover {
+  background-color: #7fbda6;
+  cursor: pointer;
+}
+
+.error_div, .authorization_div {
+  display: none;
+  border-radius: 5px;
+  max-width: 365px;
+  align-items: center;
+  text-align: center;
+  padding-top: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 16px;
+  margin-top: 16px;
+}
+
+.error_div {
+  background-color: rgb(250, 65, 45);
+}
+
+.error_message, .authorization_message {
+  background-color: transparent;
+  color: #FFFFFF;
+  font-family: 'Instrument Sans';
+  font-weight: 400;
+  font-size: 18px;
+}
