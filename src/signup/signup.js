@@ -57,7 +57,8 @@ const error_message_dict = {
   'default': 'Login failed. Please try again.',
   'Confirm-wrong':'The password you input and the confirmation one is different. Please try again.',
   'No-username':"Please enter your username.",
-  '500':"There's something wrong with our server. If this problem continues, please contact us."
+  '500':"There's something wrong with our server. If this problem continues, please contact us.",
+  "not-spcc":"The beta version only support SPCC users, sorry for inconvenience caused."
 };
 
 const email_ele = document.querySelector("#email_input")
@@ -105,30 +106,27 @@ submit_btn.addEventListener("click",async () => {
     }
 })
 
-function long_enough() {
-    const active = password_ele.value.length >= 6
-    return active;
-}
-
 async function sign_up() {
     const email = email_ele.value
     const password = password_ele.value
     const confirming = confirm_ele.value
     try {
-        if (confirming === password) {
-            if (long_enough() && username_ele.value != "") {
-                if (username_ele.value != "") {
-                    const result = await createUserWithEmailAndPassword(auth, email, password)
-                    return {"status":true,"user":result.user}
-                } else {
-                    return {'status':false,"error":"No-username"}
-                }
-            }
-        } else {
-            return {"status":false,"error":"Confirm-wrong"}
+        if (confirming !== password) {
+            throw new Error({"code":"Confirm-wrong"})
         }
+        if (password.length < 6) {
+            throw new Error({"code":"auth/weak-password"})
+        }
+        if (username_ele.value=="") {
+            throw new Error({"code":"auth/weak-No-username"})
+        }
+        if (!email.endsWith("@spcc.edu.hk")) {
+            throw new Error({"code":"not-spcc"})
+        }
+        const result = await createUserWithEmailAndPassword(auth, email, password)
+        return {"status":true,"user":result.user}
     } catch (err) {
-        return {"status":false,"error":err.code}
+        return {"status":false, "error":err.code}
     }
 }
 
