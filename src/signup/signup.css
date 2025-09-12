@@ -60,51 +60,12 @@ body {
     display:none;
 }
 
-.error_div {
-    background-color: rgb(250, 65, 45);
-    display: none;
-    border-radius: 5px;
-    max-width: 100%;
-    margin-bottom: 16px;
-    align-items: center;
-    text-align: center;
-    padding-top: 16px;
-    padding-left: 24px;
-    padding-right: 24px;
-    padding-bottom: 16px;
-}
-
-.error_message {
-    background-color: transparent;
-    color: #FFFFFF;
-    font-family: 'Instrument Sans';
-    font-weight: 400;
-    font-size: 18px;
-}
-
-.verify_btn {
-    margin-top: 8px; 
-    width: 150px;
-    border-radius:5px;
-    height: 30px;
-    border: 1px solid black;
-    background-color: #84c7ae;
-    color: black;
-    text-align: center;
-}
-
-* {
-    font-family: "instrument sans";
-}
-
-.btn-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* horizontally center items */
-    gap: 16px; /* space between items */
+.signup-input {
+    padding: 20px 5px 20px 5px;
+    width: 97%;
     margin-top: 20px;
-    text-align: center;
-    min-height: 78px; /* adjust as needed for vertical alignment */
+    border-radius: 5px;
+    border: 1px solid grey;
 }
 
 .submit-btn {
@@ -117,9 +78,9 @@ body {
     
 }
 
-input {
-    font-family: Instrument Sans;
-    width: 97%; 
-    padding: 10px 20px 10px 20px; 
+.btn-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: 20px;
 }

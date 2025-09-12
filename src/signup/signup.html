@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Signup</title>
+    <link rel="stylesheet" href="signup.css">
     <!--Google Font - Inter-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,29 +13,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    
+    <script src="../login/recaptcha.js"></script>
 </head>
 <body>
     <div class="center-logo">
         <div class="logo-container">
             <span class="logo-re">Re</span><span class="logo-vill">Vill</span>
-            <span class="logo-beta">Login page</span>
+            <span class="logo-beta">Signup page</span>
         </div>
     </div>
-    <input id="username_input" type="text" placeholder="SPCC Email" class="login-input">
-    <input id="password_input" type="password" placeholder="Password" class="login-input">
+    <input type="text" placeholder="Enter your SPCC Email" class="signup-input">
+    <input type="password" placeholder="Create a password" class="signup-input">
+    <input type="password" placeholder="Confirm your password" class="signup-input">
     <div class="btn-bar">
         <div class="g-recaptcha" data-sitekey="6Lcro4ErAAAAAOlo4yQLhppQcqEMrElXACssk2O8"></div> 
         <button id="submit_btn" class="submit-btn">Submit</button>
         <button class="submit-btn" onclick="window.location.href=('../signup/signup.html');">Signup instead</button>
     </div>
-    <div class="error_div">
+    <div class="error_div" style="display: none;">
         <span class="error_message">There's an error. Please try later.</span>
         <br>
         <button class="verify_btn">Authorize my email</button>
     </div>
 </body>
-<script type="module" src="login.js"></script>
-<script src="recaptcha.js"></script>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+
 </html>
