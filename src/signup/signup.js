@@ -56,7 +56,7 @@ const error_message_dict = {
   // Default fallback
   'default': 'Login failed. Please try again.',
   'Confirm-wrong':'The password you input and the confirmation one is different. Please try again.',
-  'No-username':"Please enter your username.",
+  'auth/weak-No-username':"Please enter your username.",
   '500':"There's something wrong with our server. If this problem continues, please contact us.",
   "not-spcc":"The beta version only support SPCC users, sorry for inconvenience caused."
 };
@@ -84,6 +84,7 @@ setPersistence(auth, browserSessionPersistence)
 
 function sendError(error_text) {
     const show_text = error_message_dict[error_text]!= undefined ? error_message_dict[error_text] : error_text
+    console.log(show_text)
     error_ele.innerText = show_text;
     error_div.style.display = "block";
 }
@@ -95,12 +96,13 @@ authorization_btn.addEventListener("click", () => {
 submit_btn.addEventListener("click",async () => {
     if (can_signin) {
         const signup_result = await sign_up()
-        updateProfile(signup_result["user"],{"displayName":username_ele.value})
         if (signup_result["status"]) {
+            updateProfile(signup_result["user"],{"displayName":username_ele.value})
             await sendEmailVerification(auth.currentUser);
             console.log("sent email")
             authorization_div.style.display = "block";
         } else {
+            console.log(signup_result["error"])
             sendError(signup_result["error"])
         }
     }
@@ -112,21 +114,21 @@ async function sign_up() {
     const confirming = confirm_ele.value
     try {
         if (confirming !== password) {
-            throw new Error({"code":"Confirm-wrong"})
+            throw new Error("Confirm-wrong")
         }
         if (password.length < 6) {
-            throw new Error({"code":"auth/weak-password"})
+            throw new Error("auth/weak-password")
         }
         if (username_ele.value=="") {
-            throw new Error({"code":"auth/weak-No-username"})
+            throw new Error("auth/weak-No-username")
         }
         if (!email.endsWith("@spcc.edu.hk")) {
-            throw new Error({"code":"not-spcc"})
+            throw new Error("not-spcc")
         }
         const result = await createUserWithEmailAndPassword(auth, email, password)
         return {"status":true,"user":result.user}
     } catch (err) {
-        return {"status":false, "error":err.code}
+        return {"status":false, "error":err.code ? err.code : err.message}
     }
 }
 
