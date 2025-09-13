@@ -4,3 +4,5 @@ process of flashcard creation. We hope through ReVill, we can help you refill yo
 We hope you enjoy browsing in our project!
 
 - TeCN, 2 Sept 2025
+
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/TechGenius9872/Revill?utm_source=oss&utm_medium=github&utm_campaign=TechGenius9872%2FRevill&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
