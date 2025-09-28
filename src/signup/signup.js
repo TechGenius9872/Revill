@@ -7,7 +7,9 @@ import {
   browserSessionPersistence,
   sendEmailVerification,
   onAuthStateChanged,
-  updateProfile
+  updateProfile,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 
 const firebaseConfig = {
@@ -82,28 +84,44 @@ setPersistence(auth, browserSessionPersistence)
     sendError("500")
   });
 
+function showUnverifiedOptions(bool) {
+  document.querySelectorAll(".unverifiedOptions").forEach((item) => {
+    item.style.display = bool ? "block" : "none";
+  })
+}
+
 function sendError(error_text) {
     const show_text = error_message_dict[error_text]!= undefined ? error_message_dict[error_text] : error_text
-    console.log(show_text)
+    if (error_text === 'auth/email-already-in-use') {
+      showUnverifiedOptions(true);
+    } else {
+      showUnverifiedOptions(false);
+    }
     error_ele.innerText = show_text;
-    error_div.style.display = "block";
+    error_div.style.display = "flex";
 }
 
 authorization_btn.addEventListener("click", () => {
   location.reload();
 })
 
+async function verifyEmail() {
+  await sendEmailVerification(auth.currentUser);
+  error_div.style.display = "none"
+  authorization_div.style.display = "block";
+}
+
 submit_btn.addEventListener("click",async () => {
     if (can_signin) {
         const signup_result = await sign_up()
+        console.log(signup_result["user"])
         if (signup_result["status"]) {
-            updateProfile(signup_result["user"],{"displayName":username_ele.value})
-            await sendEmailVerification(auth.currentUser);
-            console.log("sent email")
-            authorization_div.style.display = "block";
+          updateProfile(signup_result["user"],{"displayName":username_ele.value})
+          verifyEmail()
         } else {
-            console.log(signup_result["error"])
-            sendError(signup_result["error"])
+          const error_code = signup_result["error"]
+          console.log(error_code)
+          sendError(error_code)
         }
     }
 })
@@ -137,3 +155,29 @@ onAuthStateChanged(auth, (user) => {
     window.location.href = "../flashcard/flashcard.html";
   }
 })
+
+// ---------------------------------- handle unverified users ------------------------------------------------ 
+const reset_password_btn = document.querySelector("#reset_password")
+const login_instead = document.querySelector("#login")
+
+async function resetPassword() {
+  await sendPasswordResetEmail(auth, email_ele.value)
+  alert(`We've sent an email to ${email_ele.value} for resetting password`)
+}
+
+reset_password_btn.onclick = resetPassword;
+login_instead.onclick = async () => {
+  try {
+    await signInWithEmailAndPassword(auth, email_ele.value, password_ele.value);
+    if (auth.currentUser.emailVerified) {
+      location.href = "../flashcard/flashcard.html"
+    } else {
+      verifyEmail()
+      alert(`Your email wasn't verified. We've sent an email to ${email_ele.value} for verifying your email`)
+    }
+  } catch (err) {
+    sendError(err.code)
+    alert(error_message_dict[err.code] || err.code)
+    setTimeout(() => {location.href = "../login/login.html"}, 100)
+  }
+}

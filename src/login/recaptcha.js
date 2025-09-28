@@ -14,5 +14,5 @@ function check_recaptcha() {
         }
         
         // Successful validation → redirect
-        window.location.href = '/flashcard/flashcard.html';
+        window.location.href = '../flashcard/flashcard.html';
 }

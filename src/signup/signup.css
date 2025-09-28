@@ -86,13 +86,8 @@ body {
 }
 
 .authorization_btn {
-  margin-top: 8px; 
-  width: 70px;
-  border-radius:5px;
-  height: 30px;
-  border: 1px solid black;
   background-color: #84c7ae;
-  color: black;
+  width: 70px;
 }
 
 .authorization_message {
@@ -101,7 +96,6 @@ body {
 
 .authorization_btn:hover {
   background-color: #7fbda6;
-  cursor: pointer;
 }
 
 .error_div, .authorization_div {
@@ -115,6 +109,9 @@ body {
   padding-right: 24px;
   padding-bottom: 16px;
   margin-top: 16px;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #004AAD;
 }
 
 .error_div {
@@ -127,4 +124,25 @@ body {
   font-family: 'Instrument Sans';
   font-weight: 400;
   font-size: 18px;
+}
+
+.unverifiedOptions {
+  background-color: #84abc7;
+  width: 300px;
+}
+
+.authorization_btn, .unverifiedOptions {
+  margin-top: 8px; 
+  border-radius:5px;
+  height: 30px;
+  border: 1px solid black;
+  color: black;
+}
+
+button {
+  cursor: pointer;
+}
+
+.unverifiedOptions:hover {
+  background-color: #9ecced;
 }

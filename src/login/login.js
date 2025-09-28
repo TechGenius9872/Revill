@@ -75,7 +75,7 @@ function sendError(error_text,authorizeEmail=false) {
 submit_ele.addEventListener("click",async () => {
     const login_result = await sign_in();
     if (login_result['status']) {
-        error_div.style.display = "none";
+        error_div_ele.style.display = "none";
         if (login_result.user.emailVerified) {
           check_recaptcha();
         } else {
