@@ -55,26 +55,23 @@ body {
     margin-right: 40px;
 }
 
-.flashcard-bar1 {
+.flashcard-bar1, .flashcard-bar2 {
     display: flex;
     width: 100%;
-    background-color: #2563eb;
     padding: 20px 0 20px 0;
     border-radius: 8px;
     margin-bottom: 20px;
     animation: fade-up 0.5s;
+    margin-top: 20px;
+}
+
+.flashcard-bar1 {
+    background-color: #D1D5D8;   
 }
 
 .flashcard-bar2 {
-    display: flex;
-    width: 100%;
-    background-color: #FFB6EC;
-    padding: 20px 0 20px 0;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    animation: fade-up 0.5s;
+    background-color: #E5E7EB;
 }
-
 .button-bar {
     display: flex;
     width: 100%;

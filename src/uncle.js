@@ -23,5 +23,5 @@ if (isMobileDevice()) {
 }
 
 if (!desktop) {
-    window.location.href = "unsupported.html";
+    window.location.href = "/src/unsupported.html";
 }

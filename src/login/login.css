@@ -1,0 +1,129 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F6F6F6;
+}
+.logo-container {
+    background: white;
+    border-radius: 16px;
+    display: inline-block;
+    padding: 8px 32px 8px 24px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    text-align: center;
+    animation: fade-up 0.5s;
+}
+
+.logo-re {
+    color: #FF3B30;
+    font-size: 144px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -4px;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.logo-vill {
+    color: #004AAD;
+    font-size: 144px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -4px;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.logo-beta {
+    color: #FF3B30;
+    font-size: 40px; /* Smaller for balance */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 24px;
+    right: -56px;
+    transform: rotate(20deg);
+    opacity: 0.85;
+    background: transparent;
+    padding: 0 8px;
+    letter-spacing: 2px;
+}
+
+.center-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px; 
+}
+
+.hide {
+    display:none;
+}
+
+.error_div {
+    background-color: rgb(250, 65, 45);
+    display: none;
+    border-radius: 5px;
+    max-width: 100%;
+    margin-bottom: 16px;
+    align-items: center;
+    text-align: center;
+    padding-top: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 16px;
+}
+
+.error_message {
+    background-color: transparent;
+    color: #FFFFFF;
+    font-family: 'Instrument Sans';
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.verify_btn {
+    margin-top: 8px; 
+    width: 150px;
+    border-radius:5px;
+    height: 30px;
+    border: 1px solid black;
+    background-color: #84c7ae;
+    color: black;
+    text-align: center;
+}
+
+* {
+    font-family: "instrument sans";
+}
+
+.btn-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* horizontally center items */
+    gap: 16px; /* space between items */
+    margin-top: 20px;
+    text-align: center;
+    min-height: 78px; /* adjust as needed for vertical alignment */
+}
+
+.submit-btn {
+    background-color: #004AAD;
+    color: white;
+    width: 20%;
+    padding: 20px 5px 20px 5px;
+    border-radius: 20px;
+    border: none;
+    
+}
+
+input {
+    font-family: Instrument Sans;
+    width: 97%; 
+    padding: 10px 20px 10px 20px; 
+    margin-top: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+}
