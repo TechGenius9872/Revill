@@ -3,8 +3,8 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/fireba
 import { 
   getAuth, 
   signInWithEmailAndPassword, 
-  /*setPersistence,
-  browserSessionPersistence,*/
+  setPersistence,
+  browserSessionPersistence,
   sendEmailVerification
 } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js";
 
@@ -90,6 +90,7 @@ async function sign_in() {
     const email = username_ele.value;
     const password = password_ele.value;
     try {
+        await setPersistence(auth,browserSessionPersistence)
         const result = await signInWithEmailAndPassword(auth, email, password)
         return {"status":true,"user":result.user}
     } catch (error) {

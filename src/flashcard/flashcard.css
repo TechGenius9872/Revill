@@ -1,6 +1,7 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: #F6F6F6;
+    width: 100%;
 }
 
 .navbar {
@@ -10,6 +11,7 @@ body {
     justify-content: space-between;
     margin-top: -15px;
     animation: fade-up 0.5s;
+    width: 100%;
 }
 
 .navbarright {
@@ -45,8 +47,8 @@ body {
 .flashcard-input {
     border-radius: 20px;
     border: 1px solid black;
-    width: 90%;
-    padding: 20px 40px 20px 40px;
+    width: 100%;
+    padding: 16px 8px 16px 8px;
 }
 
 .flashcard-term, .flashcard-definition {
@@ -58,19 +60,19 @@ body {
 .flashcard-bar1, .flashcard-bar2 {
     display: flex;
     width: 100%;
-    padding: 20px 0 20px 0;
+    padding: 24px 0 24px 0;
     border-radius: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 8px;
     animation: fade-up 0.5s;
-    margin-top: 20px;
+    margin-top: 8px;
 }
 
 .flashcard-bar1 {
-    background-color: #D1D5D8;   
+    background-color: #c1c1c1;   
 }
 
 .flashcard-bar2 {
-    background-color: #E5E7EB;
+    background-color: #DDDDDD;
 }
 .button-bar {
     display: flex;
