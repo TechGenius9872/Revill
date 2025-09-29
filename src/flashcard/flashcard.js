@@ -26,9 +26,22 @@ const firebaseConfig = {
   appId: "1:187396121099:web:25b18bc210608a88e35d0e",
   measurementId: "G-XY876RR1NJ"
 };
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
+const add_pairs_btn = document.querySelector("#add")
+const create_btn = document.querySelector("#complete")
+const title_input_ele = document.querySelector("#title")
+let number_of_rows = 2;
+
+onAuthStateChanged(auth,async (user) => {
+    if (!user || !user.emailVerified) {
+        window.location.href = "../index/index.html";
+    } else {
+        document.body.style.visibility = "visible";
+    }
+})
 
 async function createFlashcards(flashcard_obj, title) {
     try {
@@ -78,10 +91,51 @@ async function deleteFlashcard(flashcard_id) {
     await batch.commit()
 }
 
-onAuthStateChanged(auth,async (user) => {
-    if (!user || !user.emailVerified) {
-        window.location.href = "../index/index.html";
-    } else {
-        document.body.style.visibility = "visible";
+function evenNumber(integer) {
+    return (integer % 2 == 0)
+}
+
+function addRow() {
+    const row = document.createElement("div")
+    const parent_div = document.querySelector(".rows_parent")
+    const HTML_content = `
+        <div class="flashcard-term">
+            <input type="text" placeholder="Enter Term" class="flashcard-input term_input">
+        </div>
+        <div class="flashcard-definition">
+            <input type="text" placeholder="Enter Definition" class="flashcard-input definition_input">
+        </div>`
+    row.innerHTML = HTML_content;
+    row.className = `flashcard-bar${evenNumber(number_of_rows) ? 1 : 2}`
+    number_of_rows++;
+    parent_div.appendChild(row)
+}
+
+function generate_flashcardJSON() {
+    const key_ele_list = document.querySelectorAll(".term_input")
+    const answer_ele_list = document.querySelectorAll(".definition_input")
+    let key_list = [];
+    let answer_list = [];
+    key_ele_list.forEach((textbox) => {
+        key_list.push(textbox.value)
+    })
+    answer_ele_list.forEach((textbox) => {
+        answer_list.push(textbox.value)
+    })
+    let json = {};
+    for (let i in key_list) {
+        json[key_list[i]] = answer_list[i];
     }
+    return json;
+}
+
+add_pairs_btn.addEventListener("click", () => {
+    addRow();
+    window.scrollTo(0, document.body.scrollHeight);
+})
+
+create_btn.addEventListener("click",() => {
+    const json_flashcards = generate_flashcardJSON();
+    const title = title_input_ele.value;
+    createFlashcards(json_flashcards,title);
 })

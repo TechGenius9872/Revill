@@ -29,28 +29,30 @@
         <button class="import-btn" id="import">Import from Quizlet</button>
         <button class="export-btn" id="export">Export to CSV</button>
         <button class="export-btn2" id="export2">Export to JSON</button>
-        <button class="delete-btn" id="delete">Delete all flashcards</button>
+        <button class="delete-btn" id="delete">Delete all flashcard pairs</button>
         <button class="uncle-btn" onclick="alert('Gary is a uncle')">Uncle</button>
     </div>
-    <div class="flashcard-bar1">
-        <div class="flashcard-term">
-            <input type="text" placeholder="Enter Term" class="flashcard-input">
+    <div class="rows_parent">
+        <div class="flashcard-bar1">
+            <div class="flashcard-term">
+                <input type="text" placeholder="Enter Term" class="flashcard-input term_input">
+            </div>
+            <div class="flashcard-definition">
+                <input type="text" placeholder="Enter Definition" class="flashcard-input definition_input">
+            </div>
         </div>
-        <div class="flashcard-definition">
-            <input type="text" placeholder="Enter Definition" class="flashcard-input">
-        </div>
-    </div>
-    <div class="flashcard-bar2">
-        <div class="flashcard-term">
-            <input type="text" placeholder="Enter Term" class="flashcard-input">
-        </div>
-        <div class="flashcard-definition">
-            <input type="text" placeholder="Enter Definition" class="flashcard-input">
+        <div class="flashcard-bar2">
+            <div class="flashcard-term">
+                <input type="text" placeholder="Enter Term" class="flashcard-input term_input">
+            </div>
+            <div class="flashcard-definition">
+                <input type="text" placeholder="Enter Definition" class="flashcard-input definition_input">
+            </div>
         </div>
     </div>
     <div class="button-bar">
-        <button class="add-btn" id="add">Add More</button>
-        <button class="complete-btn" id="complete">Complete Flashcards</button>
+            <button class="add-btn" id="add">Add More</button>
+            <button class="complete-btn" id="complete">Complete Flashcards</button>
     </div>
 </body>
 <script src="flashcard.js" type="module"></script>
