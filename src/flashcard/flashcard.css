@@ -118,3 +118,7 @@ body {
         transform: translateY(0);
     }
 }
+
+button {
+    cursor:pointer;
+}
