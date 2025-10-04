@@ -1,5 +1,5 @@
 const import_quizlet_ele = document.querySelector("#import")
-import_quizlet_ele.onclick = () => {location.href = "../import/import.html"}
+import_quizlet_ele.onclick = () => {window.open("../import/import.html","__blank")}
 
 // Use v10 for everything
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
@@ -139,3 +139,32 @@ create_btn.addEventListener("click",() => {
     const title = title_input_ele.value;
     createFlashcards(json_flashcards,title);
 })
+
+// ----------------------------- handle import from quizlet ------------------------------------------------
+
+window.addEventListener("storage",(event) => {
+    if (event.key === "imported_flashcard") {
+        const imported_data = localStorage.getItem("imported_flashcard")
+        fill_importedData(JSON.parse(imported_data))
+    }
+})
+
+function fill_importedData(data) {
+    localStorage.removeItem("imported_flashcard");
+    const keys = Object.keys(data)
+    const values = Object.values(data)
+    for (let i = 0; i < keys.length-2; i++) {
+        add_pairs_btn.click()
+    }
+    const keys_input_ele = Array.from(document.querySelectorAll(".term_input"))
+    const values_input_ele = Array.from(document.querySelectorAll(".definition_input"))
+    console.log(keys_input_ele)
+    console.log(values_input_ele)
+    
+    for (let i in keys_input_ele) {
+        keys_input_ele[i].value = keys[i]
+    }
+    for (let j in values_input_ele) {
+        values_input_ele[j].value = values[j]
+    }
+}
