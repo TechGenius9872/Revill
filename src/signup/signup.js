@@ -152,7 +152,7 @@ async function sign_up() {
 
 onAuthStateChanged(auth, (user) => {
   if (user.emailVerified) {
-    window.location.href = "../flashcard/flashcard.html";
+    window.location.href = "../interface/interface.html";
   }
 })
 
@@ -170,7 +170,7 @@ login_instead.onclick = async () => {
   try {
     await signInWithEmailAndPassword(auth, email_ele.value, password_ele.value);
     if (auth.currentUser.emailVerified) {
-      location.href = "../flashcard/flashcard.html"
+      location.href = "../interface/interface.html"
     } else {
       verifyEmail()
       alert(`Your email wasn't verified. We've sent an email to ${email_ele.value} for verifying your email`)
