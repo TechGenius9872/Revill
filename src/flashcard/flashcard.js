@@ -43,18 +43,29 @@ onAuthStateChanged(auth,async (user) => {
     }
 })
 
+function stringifyTime(date_obj) {
+    const year = date_obj.getFullYear();
+    const month = date_obj.getMonth() >8 ? date_obj.getMonth()+1 : `0${date_obj.getMonth()+1}`
+    const day = date_obj.getDate() > 9 ? date_obj.getDate() : `0${date_obj.getDate()}`
+    return `${year}/${month}/${day}`
+}
+
 async function createFlashcards(flashcard_obj, title) {
     try {
         const uid = auth.currentUser.uid
+        const username = auth.currentUser.displayName
         const flashcard_ref = doc(collection(db, 'public_flashcards'));
         const flashcard_id = flashcard_ref.id;
+        const date_now = stringifyTime(new Date());
         
         // Construct main data
         const main_data = {
             "metadata": {
                 "title": title,
                 "total_cards": Object.keys(flashcard_obj).length,
-                "user":uid
+                "user":uid,
+                "username":username,
+                "created_time":date_now
             }
         };
         
@@ -70,9 +81,13 @@ async function createFlashcards(flashcard_obj, title) {
             };
             await setDoc(card_ref, card_data);
         }
-        const user_data_ref = doc(db, "users", uid,"flashcards",flashcard_id)
-        await setDoc(user_data_ref, {"title":title})
-        console.log("Flashcards created successfully! ID:", flashcard_id);
+        const user_data_ref = doc(db, "users", uid,"created_flashcards",flashcard_id)
+        const brief_data = {
+            "title":title,
+            "created_time":date_now,
+            "last_reviewed":date_now
+        }
+        await setDoc(user_data_ref, brief_data)
         return flashcard_id;
     } catch (error) {
         console.error("Error creating flashcards:", error);

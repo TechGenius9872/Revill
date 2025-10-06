@@ -80,8 +80,6 @@ body {
 
 .stats-table,
 .streak-table {
-    flex: 1 1 0;
-    min-width: 0;
     display: flex;
     align-items: center; 
     gap: 32px;           
@@ -89,22 +87,19 @@ body {
     background: white;
     border-radius: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    min-width: 680px;
+    width: 680px;
 }
 
 .flashcard-row {
     display: flex;
     gap: 32px;
     margin-top: 32px;
-    justify-content: center; /* optional: center the row */
 }
 
 .flashcard {
-    flex: 1 1 0;
-    min-width: 0;
     background-color: white;
     border-radius: 16px;
-    margin-top: 0; /* remove top margin for alignment */
+    margin-top: 0;
     padding: 24px 32px;
     display: flex;
     flex-direction: column;
@@ -123,6 +118,10 @@ body {
     height: 29px;
 }
 
-@keyframes bitch {
-    /* this is a useful comment */
+.no-flashcards {
+    display: none;
+}
+
+p {
+    margin: 16px 0px;
 }
