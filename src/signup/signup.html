@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="signup.css">
+    <!--Google Font - Inter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--Google Font - Instrument Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="center-logo">
+        <div class="logo-container">
+            <span class="logo-re">Re</span><span class="logo-vill">Vill</span>
+            <span class="logo-beta">Signup page</span>
+        </div>
+    </div>
+    <input type="text" placeholder="Enter your SPCC Email" class="signup-input" id="email_input">
+    <input type="password" placeholder="Create a password" class="signup-input" id="password_input">
+    <input type="password" placeholder="Confirm your password" class="signup-input" id="confirm_password">
+    <input type="text" placeholder="Create an username" class="signup-input" id="username_input">
+    <div class="btn-bar">
+        <button id="submit_btn" class="submit-btn">Submit</button>
+        <button class="submit-btn" onclick="window.location.href=('../login/login.html');">I have an account</button>
+    </div>
+    <div class="error_div">
+        <span class="error_message">There's an error. Please try later.</span>
+        <button class="unverifiedOptions" id="reset_password">The account isn't mine. Reset password.</button>
+        <button class="unverifiedOptions" id="login">The account is mine. Login instead.</button>
+    </div>
+    <div class="authorization_div">
+        <span class="authorization_message">We've sent an email to you for authorization, please click the "finish" button after clicking the link in the email.</span>
+        <br>
+        <button class="authorization_btn">Finished</button>
+    </div>
+</body>
+<script src="signup.js" type="module"></script>
+</html>

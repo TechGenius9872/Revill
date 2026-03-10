@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revill Interface</title>
+    <link rel="stylesheet" href="interface.css">
+    <script type="module" src="interface.js" defer></script>
+    <!--Google Font - Inter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--Google Font - Instrument Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+</head>
+<body style="visibility:hidden;">
+    <div class="navbar">
+        <img src="/src/Images/logo.png" alt="Logo" class="navbar-logo">
+        <ul>
+            <li>Settings</li>
+            <li>About</li>
+            <li>Library</li>
+            <li onclick="window.location.href='/src/flashcard/flashcard.html'">New flashcards</li>
+        </ul>
+        <div class="user-session">
+            <img src="../Images/user_pic.png" alt="" id="pfp" class="user-image">
+            <span class="navbar-user username">User</span>
+        </div>
+    </div>
+    <div class="basicstats">
+        <div class="stats-row">
+            <div class="stats-table">
+                <div class="statsimage">
+                    <img src="/src/Images/user_pic.png" alt="User Image" class="user-image">
+                </div>
+                <div class="stats">
+                    <h1 class="user-name username">Username</h1>
+                    <p>Flashcards created: <span class="number-of-flashcards" id="num_of_flashcards">NA</span></p>
+                    <p>MC Questions Accuracy: <span class="accuracy" id="accuracy">NA</span> </p>
+                    <p>Last reviewed flashcard: <span class="latest-reviewed">NA</span></p>
+                </div>
+            </div>
+            <div class="streak-table">
+                <div class="streakimage">
+                    <img src="/src/Images/fire.png" alt="Streak Image" class="streak-image">
+                </div>
+                <div class="streak">
+                    <h1 class="streak-number"><span class="streak-length">NA</span>-Day Streak</h1>
+                    <p>Streak started: <span class="streak-date">NA</span></p>
+                    <p>Longest streak record: <span class="streak-record">NA</span> days</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flashcard-row">
+        <span class="no-flashcards">You haven't created any flashcards yet.</span>
+        <div class="flashcard">
+            <h1>Flashcard Title</h1>
+            <p>Created time: <span>NA</span></p>
+            <p>Last reviewed: <span>NA</span></p>
+        </div>
+
+    </div>
+</body>
+</html>

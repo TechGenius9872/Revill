@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Flashcards!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--Google Font - Instrument Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="../uncle.js"></script>
+    <link rel="stylesheet" href="flashcard.css">
+</head>
+<body style="visibility: hidden;">
+    <div class="navbar">
+        <image src="../Images/logo.png" alt="ReVill Logo" class="logo">
+        <div class="navbarright">
+        <p onclick="location.href='../index/index.html'">Home</p>
+        <button class="btnstyle1">Start <br> Revilling</button>
+        </div>
+    </div>
+    <h2 class="flashcard-title">Create your flashcards now</h2>
+    <h1 class="flashcard-info">using <span style="color: #004AAD;">Re</span><span style="color: #FF3131;">Vill</span></h1>
+    <input class="flashcard-title-input" id="title" type="text" placeholder="Enter Flashcard Title">
+    <div class="stupid-button-bar">
+        <button class="import-btn" id="import">Import from Quizlet</button>
+        <button class="export-btn" id="export">Export to CSV</button>
+        <button class="export-btn2" id="export2">Export to JSON</button>
+        <button class="delete-btn" id="delete">Delete all flashcard pairs</button>
+        <button class="uncle-btn" onclick="alert('Gary is a uncle')">Uncle</button>
+    </div>
+    <div class="rows_parent">
+        <div class="flashcard-bar1">
+            <div class="flashcard-term">
+                <input type="text" placeholder="Enter Term" class="flashcard-input term_input">
+            </div>
+            <div class="flashcard-definition">
+                <input type="text" placeholder="Enter Definition" class="flashcard-input definition_input">
+            </div>
+        </div>
+        <div class="flashcard-bar2">
+            <div class="flashcard-term">
+                <input type="text" placeholder="Enter Term" class="flashcard-input term_input">
+            </div>
+            <div class="flashcard-definition">
+                <input type="text" placeholder="Enter Definition" class="flashcard-input definition_input">
+            </div>
+        </div>
+    </div>
+    <div class="button-bar">
+            <button class="add-btn" id="add">Add More</button>
+            <button class="complete-btn" id="complete">Complete Flashcards</button>
+    </div>
+</body>
+<script src="flashcard.js" type="module"></script>
+</html>

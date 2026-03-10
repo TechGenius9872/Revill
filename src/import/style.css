@@ -1,0 +1,12 @@
+#submit_btn {
+    background-color: #004AAD;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    border: none;
+    padding: 20px 80px;
+}
+
+button {
+    cursor:pointer;
+}

@@ -1,0 +1,148 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F6F6F6;
+}
+.logo-container {
+    background: white;
+    border-radius: 16px;
+    display: inline-block;
+    padding: 8px 32px 8px 24px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    text-align: center;
+    animation: fade-up 0.5s;
+}
+
+.logo-re {
+    color: #FF3B30;
+    font-size: 144px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -4px;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.logo-vill {
+    color: #004AAD;
+    font-size: 144px;
+    font-weight: 700;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -4px;
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.logo-beta {
+    color: #FF3B30;
+    font-size: 40px; /* Smaller for balance */
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    position: absolute;
+    top: 24px;
+    right: -56px;
+    transform: rotate(20deg);
+    opacity: 0.85;
+    background: transparent;
+    padding: 0 8px;
+    letter-spacing: 2px;
+}
+
+.center-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px; 
+}
+
+.hide {
+    display:none;
+}
+
+.signup-input {
+    padding: 20px 5px 20px 5px;
+    width: 97%;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid grey;
+}
+
+.submit-btn {
+    background-color: #004AAD;
+    color: white;
+    width: 20%;
+    padding: 20px 5px 20px 5px;
+    border-radius: 20px;
+    border: none;
+    
+}
+
+.btn-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.authorization_btn {
+  background-color: #84c7ae;
+  width: 70px;
+}
+
+.authorization_message {
+  color: black;
+}
+
+.authorization_btn:hover {
+  background-color: #7fbda6;
+}
+
+.error_div, .authorization_div {
+  display: none;
+  border-radius: 5px;
+  max-width: 365px;
+  align-items: center;
+  text-align: center;
+  padding-top: 16px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-bottom: 16px;
+  margin-top: 16px;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #004AAD;
+}
+
+.error_div {
+  background-color: rgb(250, 65, 45);
+}
+
+.error_message, .authorization_message {
+  background-color: transparent;
+  color: #FFFFFF;
+  font-family: 'Instrument Sans';
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.unverifiedOptions {
+  background-color: #84abc7;
+  width: 300px;
+}
+
+.authorization_btn, .unverifiedOptions {
+  margin-top: 8px; 
+  border-radius:5px;
+  height: 30px;
+  border: 1px solid black;
+  color: black;
+}
+
+button {
+  cursor: pointer;
+}
+
+.unverifiedOptions:hover {
+  background-color: #9ecced;
+}

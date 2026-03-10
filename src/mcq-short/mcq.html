@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn with Revill MCQ TM</title>
+    <!--Google Font - Inter-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <!--Google Font - Instrument Sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mcq.css">
+    <script src="mcq.js"></script>
+</head>
+<body>
+    <div class="mcq">
+        <h1>Is Hoosun a bitch?</h1>
+        <div class="mcq-choice-row">
+            <div class="choice1" id="choice1" onclick="BULLSHIT()">
+                <div class="circle">1</div>
+                <p>Yes</p>
+            </div>
+            <div class="choice2" id="choice2" onclick="WRONG()">
+                <div class="circle">2</div>
+                <p>No</p>
+            </div>
+            <div class="choice3" id="choice3" onclick="WRONG()">
+                <div class="circle">3</div>
+                <p>Maybe</p>
+            </div>
+            <div class="choice4" id="choice4" onclick="WRONG()">
+                <div class="circle">4</div>
+                <p>Absolutely not</p>
+            </div>
+        </div>
+        <div class="answer">
+            <p class="correct">Correct</p>
+            <p class="incorrect">Incorrect</p>
+        </div>
+        <p class="exit">Exit</p>
+        <p class="exit" onclick="Next();">Next Question</p>
+    </div>
+</body>
+</html>

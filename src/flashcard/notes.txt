@@ -1,0 +1,118 @@
+Developer: Caspar
+Created Time: 28/9/2025 23:56
+Description: This notes is for storing the proposed data structure, and any other notes i wanna write down for future use.
+Format: Title+Date+Content+<br><br>+'----------------------'+<br><br>
+
+
+Proposed Data structure for storing flashcards
+28/9/2025 23:57
+
+firestore-root/
+├── users/                          [Collection]
+├── public_flashcards/              [Collection] 
+└── private_flashcards/             [Collection] - (Stage 1)
+
+users/                              [Collection]
+├── {user_id}                     [Document]
+│   ├── username: "Uncle"
+│   ├── email: "gary@spcc.edu.hk"
+│   ├── role: "student"
+│   ├── created_at: timestamp
+│   └── flashcards_created: ["flashcard_id1", "flashcard_id2"]  ← ARRAY of IDs
+
+public_flashcards/                  [Collection]
+├── {flashcard_id}                [Document]
+│   ├── metadata: [Map]
+│   │   ├── title: "Math flashcards"
+│   │   ├── creator: "user_id"              ← Reference to user
+│   │   ├── subject: "math"
+│   │   ├── grade: "f2"
+│   │   ├── description: "Basic math concepts"
+│   │   ├── isOfficial: false
+│   │   ├── createdAt: timestamp
+│   │   └── downloadCount: 0
+│   │
+│   └── cards/                      [Subcollection]
+│       ├── {card_id1}: [Document]
+│       │   ├── question: "What is 1+1?"
+│       │   ├── answer: "2"
+│       │   ├── difficulty: "easy"
+│       │   ├── explanation: "Basic addition"
+│       │   └── order: 1
+│       ├── {card_id2}: [Document]
+│       │   ├── question: "What is 2x2?"
+│       │   ├── answer: "4"
+│       │   ├── difficulty: "easy"
+│       │   └── order: 2
+│       └── ...
+
+Key Features:
+✅ Simple queries - Get user's flashcards via array lookup
+✅ Structured data - Metadata + cards separation
+✅ Scalable - Ready for Stage 1 features
+✅ HK syllabus ready - subject/grade fields
+✅ Sharing prepared - isOfficial flag for curated content
+
+
+--------------------------------------------------------------------------------------------------------
+
+
+How can I read/write/modify data?
+29/9/2025 00:24
+
+Basic functions:
+// Add to collection - Firestore creates ID
+const docRef = await db.collection('public_flashcards').add({
+  metadata: {
+    title: "F2 Math Algebra",
+    creator: userId,
+    subject: "math",
+    grade: "f2",
+    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+  }
+});
+console.log("Created with ID: ", docRef.id);
+
+
+Subcollection:
+// Add card to flashcard set
+await db.collection('public_flashcards').doc(flashcardId)
+  .collection('cards').add({
+    question: "What is 1+1?",
+    answer: "2",
+    difficulty: "easy",
+    order: 1
+  });
+
+
+Reading data:
+const doc = await db.collection('public_flashcards').doc(flashcardId).get();
+if (doc.exists) {
+  console.log("Flashcard data: ", doc.data());
+} else {
+  console.log("No such document!");
+}
+
+
+Entire collection:
+const snapshot = await db.collection('public_flashcards').get();
+snapshot.forEach(doc => {
+  console.log(doc.id, " => ", doc.data());
+});
+
+
+Query with filters:
+const mathFlashcards = await db.collection('public_flashcards')
+  .where('metadata.subject', '==', 'math')
+  .get();
+
+const userFlashcards = await db.collection('public_flashcards')
+  .where('metadata.creator', '==', userId)
+  .get();
+
+
+Update fields:
+await db.collection('public_flashcards').doc(flashcardId).update({
+  'metadata.title': "New Updated Title",
+  'metadata.downloadCount': firebase.firestore.FieldValue.increment(1)
+});
