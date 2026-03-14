@@ -1,171 +1,236 @@
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #F6F6F6;
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
-.navbar {
-    background-color: white;
+.nav-bar{
+    height:4.5rem; 
+    width: 100%;
+    background-color: #FFFFFF;
+    margin-left: 0px;
+    margin-top:0px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     display: flex;
+    flex-direction: row;
     align-items: center;
+    padding: 1rem 2rem !important;
     justify-content: space-between;
-    margin-top: -15px;
-    animation: fade-up 0.5s;
 }
 
-.navbarright {
-    display: flex;
-    align-items: right;
-    padding: 20px;
-
+.logo-img {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
-.btnstyle1 {
-    background-color: #004AAD;
-    color: white;
-    border-radius: 16px;
-    padding: 5px 15px;
+.logo-txt {
+    font-size: 24px;
+}
+
+.purple {
+    background-color: #8997ff;
+}
+
+.white-text {
+    color: #FFFFFF;
+}
+
+#getStarted {
+    width: 9.125rem;
+    height: 2.75rem;
+    box-shadow: none;
+    font-size: 18px;
     border: none;
-    margin-left: 32px;
-}
-
-.btnstyle2 {
-    background-color: #004AAD;
-    color: white;
-    border-radius: 8px;
-    padding: 5px 25px 5px 25px;
-    border: none;
-    font-size: 72px;
-    font-weight: 400;
-    margin-top: -30px;
-    animation: fade-up 0.5s;
-    font-family: Instrument Sans;
-}
-
-.btnstyle2:hover, .btnstyle1:hover {
-    opacity: 0.85;
-}
-
-.btnstyle2:active, .btnstyle2:hover {
-    background-color: #1a5aad;
-}
-
-.btn-container {
-    text-align: center;
-}
-
-.logo-container {
-    background: white;
     border-radius: 16px;
-    display: inline-block;
-    padding: 8px 32px 8px 24px;
-    position: relative;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    text-align: center;
-    animation: fade-up 0.5s;
 }
 
-.logo-re {
-    color: #FF3B30;
-    font-size: 144px;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -4px;
-    vertical-align: middle;
-    line-height: 1;
+.black-text {
+    color: #000000;
 }
 
-.logo-vill {
-    color: #004AAD;
-    font-size: 144px;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -4px;
-    vertical-align: middle;
-    line-height: 1;
+#login {
+    font-size: 18px;
 }
 
-.logo-beta {
-    color: #FF3B30;
-    font-size: 40px; /* Smaller for balance */
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    position: absolute;
-    top: 24px;
-    right: -56px;
-    transform: rotate(20deg);
-    opacity: 0.85;
-    background: transparent;
-    padding: 0 8px;
-    letter-spacing: 2px;
+#login:hover {
+    color: #6375FF
 }
 
-.center-logo {
+.navbar-left, .navbar-right {
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    gap: 1.25rem;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.body {
+    padding: 3rem 0px 5rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 40px; 
-}
-
-.center-description {
+    background-color: #f8f8f8;
     text-align: center;
-    font-size: 72px;
-    margin-top: -50px;
-    animation: fade-up 0.5s;
-    margin-bottom: 0;
-    line-height: 1;
-    font-family: Instrument Sans;
 }
 
-.index-bottom {
-    background: linear-gradient(to right, #BBBBBB, #FFFFFF);
-    font-family: Instrument Sans;
-    margin-top: 20px;
-    margin-left: -20px;
-    margin-right: -5px;
+.Inter {
+    font-family: Inter;
 }
 
+.Convergence {
+    font-family: Convergence;
+}
 
-@keyframes fade-up  {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+.slogan-txt {
+    font-size: 64px;
+    margin-bottom: 2rem;
+    line-height: 1.25;
+}
+
+.no-pads {
+    padding: 0px;
+}
+
+.no-margins {
+    margin: 0px;
+}
+
+.grey-text {
+    color: #505050;
+}
+
+.h2-txt {
+    font-size: 32px;
+    margin-bottom: 32px;
+}
+
+#bigStart {
+    font-size: 32px;
+    width: 17rem;
+    height: 5rem;
+    border: none;
+    border-radius: 32px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.whyRevill {
+    text-align: center;
+    padding-bottom: 32px;
+}
+
+.sans-serif {
+    font-family: sans-serif;
+}
+
+.features {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+}
+
+.secondary-purple {
+    background-color: #E7E6FF;
+}
+
+.grid {
+    border-radius: 16px;
+    padding: 32px;
+}
+
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@keyframes fade-down {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
+@media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 
-@keyframes fade-away {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+.grid-title {
+    font-size: 24px;
 }
 
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+.grid-text {
+    font-size: 16px;
 }
 
-button {
-    cursor: pointer;
+.iconbox {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    padding: 0.625rem;
+}
+
+.strong-purple {
+    background-color: #6375FF;
+}
+
+.icon-img {
+    width: 2.75rem;
+    height: 2.75rem;
+}
+
+.works {
+    padding: 3rem;
+    text-align: center;
+}
+
+.works-title {
+    font-size:36px;
+}
+
+.works-row {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.works-circles {
+    font-size: 40px;
+    padding: 0.5rem;
+    text-align: center;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+}
+
+.works-item-title {
+    font-size: 24px;
+}
+
+.works-item-content {
+    font-size: 16px;
+}
+
+.works-item {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.weak-purple {
+    background-color: #C0C8FF;
 }

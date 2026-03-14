@@ -4,43 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReVill</title>
-    <link rel="stylesheet" href="style.css">
     <!--Google Font - Inter-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <!--Google Font - Instrument Sans-->
+    <!--Google Font - Convergence-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Convergence&family=Lexend:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
     <script src="/src/uncle.js"></script>
 </head>
-<body>
-    
-    <div class="navbar">
-        <image src="/src/Images/logo.png" alt="ReVill Logo" class="logo">
-        <div class="navbarright">
-            <p onclick="window.location.href='/src/flashcard/flashcard.html'">Create Flashcard</p>
-            <button class="btnstyle1" onclick="window.location.href='/src/login/login.html'">Start <br> Revilling</button>
+<body class="no-pads no-margins">
+    <div class="nav-bar Inter">
+        <div class="navbar-left">
+            <img src="/assets/index/logo3.png" alt="" class="logo-img clickable">
+            <span class="logo-txt clickable ">Revill</span>
+        </div>
+        <div class="navbar-right">
+            <span class="black-text clickable bold" id="login">Login</span>
+            <button class="purple white-text clickable bold" id="getStarted">Get started</button>
         </div>
     </div>
-    <div class="center-logo">
-        <div class="logo-container">
-            <span class="logo-re">Re</span><span class="logo-vill">Vill</span>
-            <span class="logo-beta">Beta</span>
+    <div class="body column">
+        <span class="black-text Convergence slogan-txt">
+            Refill what you forget,<br>
+            Revise what matters
+        </span>
+        <div class="grey-text Convergence h2-txt">
+            <p>Learn and revise faster with AI study buddy tailor-made<br>for HK students</p>
+        </div>
+        <button class="purple black-text clickable bold" id="bigStart">Start Revilling</button>
+    </div>
+    <div class="features Inter">
+        <div class="whyRevill sans-serif">
+            <p class="black-text" style="font-size: 36px;">Why Revill?</p>
+            <p class="grey-text" style="font-size: 20px;">The smartest way to prepare for Hong Kong exams</p>
+        </div>
+        <div class="features-grid">
+            <div class="grid secondary-purple">
+                <div class="iconbox strong-purple">
+                    <img src="/assets/index/icon1.svg" class='icon-img' alt="">
+                </div>
+                <p class="grid-title black-text">AI-Powered Learning</p>
+                <p class="grid-text grey-text">Our AI adapts to your learning style and helps you focus on what you need the most</p>
+            </div>
+            <div class="grid secondary-purple">
+                <div class="iconbox strong-purple">
+                    <img src="/assets/index/icon2.svg" class='icon-img' alt="">
+                </div>
+                <p class="grid-title black-text">Smart Flashcards</p>
+                <p class="grid-text grey-text">Create flashcards instantly from your notes with AI or build them manually</p>
+            </div>
+            <div class="grid secondary-purple">
+                <div class="iconbox strong-purple">
+                    <img src="/assets/index/icon3.svg" class='icon-img' alt="">
+                </div>
+                <p class="grid-title black-text">DSE-Focused</p>
+                <p class="grid-text grey-text">Specifically designed for Hong Kong curriculum and exam patterns</p>
+            </div>
+            <div class="grid secondary-purple">
+                <div class="iconbox strong-purple">
+                    <img src="/assets/index/icon4.svg" class='icon-img' alt="">
+                </div>
+                <p class="grid-title black-text">Create Mock Papers</p>
+                <p class="grid-text grey-text">Create and share mock papers yourself, or look at the ones created by others, to get more study materials</p>
+            </div>
+            <div class="grid secondary-purple">
+                <div class="iconbox strong-purple">
+                    <img src="/assets/index/icon5.svg" class='icon-img' alt="">
+                </div>
+                <p class="grid-title black-text">Progress Tracking</p>
+                <p class="grid-text grey-text">Connect with fellow students, share notes, and get help when you need it</p>
+            </div>
+            <div class="grid secondary-purple">
+                <div class="iconbox strong-purple">
+                    <img src="/assets/index/icon6.svg" class='icon-img' alt="">
+                </div>
+                <p class="grid-title black-text">Study Community</p>
+                <p class="grid-text grey-text">Our AI adapts to your learning style and helps you focus on what you need most.</p>
+            </div>
         </div>
     </div>
-    <div class="center-description">
-        <p>Re<span style="color: #004AAD">fill</span> your knowledge <br> through <span style="color: #FF0000;">rev</span>ision</p>
-    </div>
-    <div class="btn-container">
-        <button class="btnstyle2" id="start_now_btn">Start Now!</button>
-    </div>
-    <div class="index-bottom">
-        <!--Hoosun is so bad, he talk lutlutcutcut in live. Even an old uncle is better than him-->
-        <!--Rights to this index.html file belongs to Chan Ching On and Hui Chi Yu-->
-        <!--Hackers are strictly prohibited.-->
-        
+    <div class="works secondary-purple">
+        <p class="works-title">How It Works</p>
+        <div class="works-row">
+            <div class="works-item">
+                <p class="works-circles white-text strong-purple">
+                    1
+                </p>
+                <p class="works-item-title black-text">
+                    Create your flashcards
+                </p>
+                <p class="works-item-content grey-text">
+                    Create flashcards with the help of AI, or input manually
+                </p>
+            </div>
+            <div class="works-item">
+                <p class="works-circles white-text purple">
+                    2
+                </p>
+                <p class="works-item-title black-text">
+                    Study & Practice
+                </p>
+                <p class="works-item-content grey-text">
+                    Use flashcards, past papers, and interactive quizzes to master topics
+                </p>
+            </div>
+            <div class="works-item">
+                <p class="works-circles white-text weak-purple">
+                    3
+                </p>
+                <p class="works-item-title black-text">
+                    Track & Improve
+                </p>
+                <p class="works-item-content grey-text">
+                    Monitor your progress in your profile page and focus on areas that need improvements
+                </p>
+            </div>
+        </div>
     </div>
 </body>
 <script src="index.js" type="module"></script>
