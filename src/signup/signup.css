@@ -1,148 +1,129 @@
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: #F6F6F6;
-}
-.logo-container {
-    background: white;
-    border-radius: 16px;
-    display: inline-block;
-    padding: 8px 32px 8px 24px;
-    position: relative;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    text-align: center;
-    animation: fade-up 0.5s;
+.Inter {
+  font-family: Inter;
 }
 
-.logo-re {
-    color: #FF3B30;
-    font-size: 144px;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -4px;
-    vertical-align: middle;
-    line-height: 1;
+.welcome {
+  font-size: 56px;
+  margin-bottom: 3rem;
 }
 
-.logo-vill {
-    color: #004AAD;
-    font-size: 144px;
-    font-weight: 700;
-    font-family: 'Inter', sans-serif;
-    letter-spacing: -4px;
-    vertical-align: middle;
-    line-height: 1;
+.secondary-purple {
+    background-color: #E7E6FF;
 }
 
-.logo-beta {
-    color: #FF3B30;
-    font-size: 40px; /* Smaller for balance */
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    position: absolute;
-    top: 24px;
-    right: -56px;
-    transform: rotate(20deg);
-    opacity: 0.85;
-    background: transparent;
-    padding: 0 8px;
-    letter-spacing: 2px;
+.strong-purple {
+    background-color: #6375FF;
 }
 
-.center-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-top: 40px; 
+.weak-purple {
+    background-color: #C0C8FF;
 }
 
-.hide {
-    display:none;
+.purple {
+    background-color: #8997ff;
 }
 
-.signup-input {
-    padding: 20px 5px 20px 5px;
-    width: 97%;
-    margin-top: 20px;
-    border-radius: 5px;
-    border: 1px solid grey;
+.row {
+  display: flex;
+  flex-direction:row;
 }
 
-.submit-btn {
-    background-color: #004AAD;
-    color: white;
-    width: 20%;
-    padding: 20px 5px 20px 5px;
-    border-radius: 20px;
-    border: none;
-    
-}
-
-.btn-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.authorization_btn {
-  background-color: #84c7ae;
-  width: 70px;
-}
-
-.authorization_message {
-  color: black;
-}
-
-.authorization_btn:hover {
-  background-color: #7fbda6;
-}
-
-.error_div, .authorization_div {
-  display: none;
-  border-radius: 5px;
-  max-width: 365px;
-  align-items: center;
-  text-align: center;
-  padding-top: 16px;
-  padding-left: 24px;
-  padding-right: 24px;
-  padding-bottom: 16px;
-  margin-top: 16px;
-  justify-content: center;
+.column {
+  display: flex;
   flex-direction: column;
-  background-color: #004AAD;
 }
 
-.error_div {
-  background-color: rgb(250, 65, 45);
+.main {
+  padding: 2rem;
+  display:flex;
+  flex-direction: column;
 }
 
-.error_message, .authorization_message {
-  background-color: transparent;
-  color: #FFFFFF;
-  font-family: 'Instrument Sans';
-  font-weight: 400;
-  font-size: 18px;
+.big_thing {
+  width: 50%;
+  height: 100%;
 }
 
-.unverifiedOptions {
-  background-color: #84abc7;
-  width: 300px;
+.mid_text{
+  font-size: 24px;
+  margin-bottom: 0.75rem;
 }
 
-.authorization_btn, .unverifiedOptions {
-  margin-top: 8px; 
-  border-radius:5px;
-  height: 30px;
-  border: 1px solid black;
-  color: black;
+.textbox {
+  width: calc(100%-1rem);
+  height: 3rem;
+  background-color: #f3f3f3;
+  border: #a0a0a0;
+  border-radius: 10px;
+  font-size: 16px;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
 }
 
-button {
+.sign_up {
+  width: 100%;
+  height: 3.5rem;
+  font-weight: bold;
+  border-radius: 30px;
+  margin-top: 2rem;
+  border-color: transparent;
+  font-size: 24px;
+}
+
+.sign_up:hover {
+  background-color: #5264ee;
   cursor: pointer;
 }
 
-.unverifiedOptions:hover {
-  background-color: #9ecced;
+.divider-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.5rem;       /* Space between lines and text */
+  align-items: center;
+  color: #000000;  /* Text color */
+  margin-top:3rem;
+  margin-bottom: 3rem;  /* Space above and below the divider */
+  width: 100%;     /* Forces it to stretch across the form */
+  font-size: 20px;
+}
+
+.divider-grid::before,
+.divider-grid::after {
+  content: "";
+  height: 1px;
+  background-color: #aaaaaa; /* Line color */
+}
+
+.login_guest {
+  height:3.5rem;
+  width: 100%;
+  border-color: transparent;
+  font-size:24px;
+  font-weight:bold;
+  border-radius:30px;
+  margin-bottom: 2rem;
+}
+
+.login_guest:hover {
+  background-color: #b0b8ef;
+  cursor:pointer;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+.bottom_line {
+  font-size: 18px;
+  text-align: center;
+}
+
+a{
+  text-decoration: none;
+  color: #6375ff;
+  font-weight: 800;
 }
